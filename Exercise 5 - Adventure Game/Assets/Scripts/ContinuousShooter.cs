@@ -32,6 +32,7 @@ public class ContinuousShooter : MonoBehaviour
             GameObject newMissile = Instantiate(missilePrefab, spawnPoint.position, Quaternion.identity); //copies
             // if parent = pawnsLeft, shoot right
             if (transform.parent.name == "pawnsLeft") {
+                yield return new WaitForSeconds(0.5f);
                 // newMissile.GetComponent<Rigidbody>().AddForce(transform.right, missileSpeed);
                 newMissile.GetComponent<Rigidbody>().AddForce(new Vector3(missileSpeed, 0, 0));
                 yield return new WaitForSeconds(1);

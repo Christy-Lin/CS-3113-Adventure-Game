@@ -8,6 +8,8 @@ TagManager:
   - Pawn
   - Key
   - Missile
+  - missile
+  - Spike
   layers:
   - Default
   - TransparentFX

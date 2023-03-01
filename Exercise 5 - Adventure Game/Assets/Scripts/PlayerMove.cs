@@ -33,13 +33,14 @@ public class PlayerMove : MonoBehaviour
     // picking up key
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Key")) {
+            PublicVars.hasKey = true;
             // int keyNum = Int32.Parse(other.name.Substring(3));  // name of Key object... Key0,...
             Destroy(other.gameObject); // to pick it up
             // PublicVars.hasKey[keyNum] = true;
         }
 
         if (other.CompareTag("Rook")) {
-            // Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 

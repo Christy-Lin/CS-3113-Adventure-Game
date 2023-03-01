@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - missile
+  - Rook
+  - Pawn
+  - Key
+  - Missile
   layers:
   - Default
   - TransparentFX

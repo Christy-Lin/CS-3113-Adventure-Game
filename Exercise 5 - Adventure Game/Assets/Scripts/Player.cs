@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 
     UnityEngine.AI.NavMeshAgent _navMeshAgent;
     Camera mainCam;
+    GameObject puzzleObj;
 
     bool allowDamage = true;
     float secSinceLastDamage = 0.0f;
@@ -20,6 +21,10 @@ public class Player : MonoBehaviour
         mainCam = Camera.main;
         _navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         _gameManager = GameObject.FindObjectOfType<GameManager>();
+
+        if (puzzleObj) { //SceneManager.GetActiveScene().name == "puzzleCombination" &&
+            //puzzleObj.GetComponent<puzzleCombi>().Start();
+        }
     }
 
     void Update()
@@ -62,6 +67,11 @@ public class Player : MonoBehaviour
         //damage
         if (other.CompareTag("Rook")) {
             _gameManager.HealthDecr(25);
+            allowDamage = false;
+        }
+
+        if (other.CompareTag("Plate")) { 
+            puzzleObj.GetComponent<puzzleCombi>().Input(other.gameObject);
             allowDamage = false;
         }
     }

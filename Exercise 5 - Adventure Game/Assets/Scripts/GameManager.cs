@@ -7,8 +7,7 @@ public class GameManager : MonoBehaviour
 {
     private int lives = 3, health = 100;
     public static bool pause = false;
-    public TextMeshProUGUI healthUI;
-    public TextMeshProUGUI livesUI;
+    public TextMeshProUGUI healthUI, livesUI;
     public GameObject pauseUI;
 
     private void Start()
@@ -16,6 +15,22 @@ public class GameManager : MonoBehaviour
         healthUI.text = "HEALTH: " + health;
         livesUI.text = "LIVES: " + lives;
         pauseUI.SetActive(false);
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (pause) {
+                Resume();
+            }
+            else {
+                Pause();
+            }
+        }
+    }
+
+    public int GetLives() {
+        return lives;
     }
 
     public void HealthDecr(int points) {
@@ -35,7 +50,7 @@ public class GameManager : MonoBehaviour
                 healthUI.text = "HEALTH: " + health;
                 livesUI.text = "LIVES: " + lives;
             }
-
+ 
         }
     }
 
@@ -51,20 +66,8 @@ public class GameManager : MonoBehaviour
         pause = true;
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (pause) {
-                Resume();
-            }
-            else {
-                Pause();
-            }
-        }
+    public void initPuzzleLock() {
+        
     }
 
-    public int GetLives()
-    {
-        return lives;
-    }
 }

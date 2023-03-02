@@ -11,6 +11,7 @@ TagManager:
   - missile
   - Spike
   - Door
+  - Plate
   layers:
   - Default
   - TransparentFX

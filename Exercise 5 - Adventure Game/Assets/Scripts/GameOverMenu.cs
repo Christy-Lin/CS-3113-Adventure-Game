@@ -4,8 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
+    GameObject _mainManager;
+
+    void Start() {
+        _mainManager = FindGameObjectWithTag("Main");
+    }
+
     public void Play() {
-        SceneManager.LoadScene("puzzleMaze");
+        int ranInt = _mainManager.GetComponent<RandomLevel>().RandomizeNextLevel();
+        SceneManager.LoadScene(ranInt);
     }
     
     public void Quit() {

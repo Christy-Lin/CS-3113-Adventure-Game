@@ -5,25 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
+    GameObject _mainManager;
+    
     public bool locked = true;
-    public string levelToLoad;
-    void Start()
-    {
-        
-    }
+    int ranInt;
 
-    void Update()
-    {
-        
+    void Start() {
+        _mainManager = FindGameObjectWithTag("Main");
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
             if (!locked) {
-                SceneManager.LoadScene("puzzleShoot");
+                ranInt = _mainManager.GetComponent<RandomLevel>().RandomizeNextLevel();
+                SceneManager.LoadScene(ranInt);
             }
             if (PublicVars.hasKey) {
                 PublicVars.hasKey = false;
+                ranInt = _mainManager.GetComponent<RandomLevel>().RandomizeNextLevel();
                 SceneManager.LoadScene("puzzleShoot");
             }
         }

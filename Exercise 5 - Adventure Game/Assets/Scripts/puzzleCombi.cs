@@ -11,6 +11,10 @@ public class puzzleCombi : MonoBehaviour
     int[] input = new int[5];
     int position = 0;
 
+    void Awake() {
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         _gameManager = GameObject.FindObjectOfType<GameManager>();

@@ -5,24 +5,27 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    private int health = 3;
+    private int lives = 3, health = 3;
     public static bool pause = false;
 
-    public TextMeshProUGUI healthUI;
+    public TextMeshProUGUI livesUI;
     public GameObject pauseUI;
 
     private void Start()
     {
-        healthUI.text = "LIVES: " + health;
+        livesUI.text = "LIVES: " + lives;
         pauseUI.SetActive(false);
     }
 
-    public void HealthDecr(int points) {
-        health -= points;
-        healthUI.text = "LIVES: " + health;
+    public void healthDecr(int points) {
+        lives -= points;
+        livesUI.text = "LIVES: " + lives;
         if(health <= 0)
         {
-            SceneManager.LoadScene("Game Over");
+            lives -= 1;
+            if (lives <= 0) {
+                //SceneManager.LoadScene("Game Over");
+            }
         }
     }
 
@@ -50,8 +53,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int GetHealth()
+    public int Getlives()
     {
-        return health;
+        return lives;
     }
 }

@@ -2,30 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    private int lives = 3, health = 3;
+    private int lives = 3, health = 100;
     public static bool pause = false;
-
+    public TextMeshProUGUI healthUI;
     public TextMeshProUGUI livesUI;
     public GameObject pauseUI;
 
     private void Start()
     {
+        healthUI.text = "HEALTH: " + health;
         livesUI.text = "LIVES: " + lives;
         pauseUI.SetActive(false);
     }
 
     public void HealthDecr(int points) {
-        lives -= points;
-        livesUI.text = "LIVES: " + lives;
-        if(health <= 0)
+        health -= points;
+        healthUI.text = "HEALTH: " + health;
+        
+        if (health <= 0)
         {
             lives -= 1;
+
             if (lives <= 0) {
-                //SceneManager.LoadScene("Game Over");
+                SceneManager.LoadScene("GameOver");
             }
+            else {
+                health = 100;
+            
+                healthUI.text = "HEALTH: " + health;
+                livesUI.text = "LIVES: " + lives;
+            }
+
         }
     }
 

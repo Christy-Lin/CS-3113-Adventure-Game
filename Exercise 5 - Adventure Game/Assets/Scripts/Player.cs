@@ -3,26 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PlayerMove : MonoBehaviour
+public class Player : MonoBehaviour
 {
 
-    // navmesh
+    GameManager _gameManager;
+
     UnityEngine.AI.NavMeshAgent _navMeshAgent;
     Camera mainCam;
 
-    // Start is called before the first frame update
+    bool allowDamage = true;
+    float secSinceLastDamage = 0.0f;
+    public float allowDamageInterval = 0.5f;
+
     void Start()
     {
+        mainCam = Camera.main;
         _navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        mainCam = Camera.main;  // camera
+        _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // input from mouse
+        if (_gameManager.GetHealth() <= 0) {
+            //Instantiate(explosion, transform.position, Quaternion.identity);
+            //_audioSource.PlayOneShot(deathSfx);
+            Destroy(gameObject);
+        }
+
+        // if left click
         if (Input.GetMouseButtonDown(0)) {
-            // if left click
             RaycastHit hit;
             if (Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)) {
                 _navMeshAgent.destination = hit.point;  // go to where clicked
@@ -30,8 +39,19 @@ public class PlayerMove : MonoBehaviour
         }
     }
     
-    // picking up key
+    private void dmgCheck() {
+        if (!allowDamage) {
+            secSinceLastDamage += Time.deltaTime;
+            
+            if (secSinceLastDamage >= allowDamageInterval) {
+                allowDamage = true;
+                secSinceLastDamage = 0f;
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other) {
+        //picking up key
         if (other.CompareTag("Key")) {
             PublicVars.hasKey = true;
             // int keyNum = Int32.Parse(other.name.Substring(3));  // name of Key object... Key0,...
@@ -39,8 +59,10 @@ public class PlayerMove : MonoBehaviour
             // PublicVars.hasKey[keyNum] = true;
         }
 
+        //damage
         if (other.CompareTag("Rook")) {
-            Destroy(gameObject);
+            _gameManager.HealthDecr(1);
+            allowDamage = false;
         }
     }
 

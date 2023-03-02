@@ -5,7 +5,7 @@ using UnityEngine;
 public class spikeAttack : MonoBehaviour
 {
     float speed = 3f;
-    float height = 0.5f;
+    float height = 0.8f;
     Vector3 curr_position;
     
     void Start() {

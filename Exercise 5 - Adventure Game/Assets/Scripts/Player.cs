@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (_gameManager.GetHealth() <= 0) {
+        if (_gameManager.GetLives() <= 0) {
             //Instantiate(explosion, transform.position, Quaternion.identity);
             //_audioSource.PlayOneShot(deathSfx);
             Destroy(gameObject);

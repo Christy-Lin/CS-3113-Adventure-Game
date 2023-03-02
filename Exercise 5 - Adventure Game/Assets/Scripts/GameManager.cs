@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         pauseUI.SetActive(false);
     }
 
-    public void healthDecr(int points) {
+    public void HealthDecr(int points) {
         lives -= points;
         livesUI.text = "LIVES: " + lives;
         if(health <= 0)
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int Getlives()
+    public int GetLives()
     {
         return lives;
     }

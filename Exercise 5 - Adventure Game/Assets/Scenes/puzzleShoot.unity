@@ -2011,6 +2011,10 @@ PrefabInstance:
       propertyPath: locked
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3057930262861773094, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: levelToLoad
+      value: puzzleAttack
+      objectReference: {fileID: 0}
     - target: {fileID: 5637126409635228892, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
       propertyPath: m_Name
       value: Door

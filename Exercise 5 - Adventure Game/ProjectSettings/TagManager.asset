@@ -13,6 +13,7 @@ TagManager:
   - Door
   - Plate
   - Main
+  - Music
   layers:
   - Default
   - TransparentFX

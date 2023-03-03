@@ -17,13 +17,15 @@ public class Door : MonoBehaviour
             if (!locked) {
                 //ranInt = RandomLevel._mainManager.ranInt;
                 //ranInt = _mainManager.GetComponent<RandomLevel>().RandomizeNextLevel();
+                ranInt = SceneManager.GetActiveScene().buildIndex + 1;
                 SceneManager.LoadScene(ranInt);
             }
             if (PublicVars.hasKey) {
                 PublicVars.hasKey = false;
                 //ranInt = RandomLevel._mainManager.ranInt;
                 //ranInt = _mainManager.GetComponent<RandomLevel>().RandomizeNextLevel();
-                SceneManager.LoadScene("puzzleShoot");
+                ranInt = SceneManager.GetActiveScene().buildIndex + 1;
+                SceneManager.LoadScene(ranInt);
             }
         }
     }

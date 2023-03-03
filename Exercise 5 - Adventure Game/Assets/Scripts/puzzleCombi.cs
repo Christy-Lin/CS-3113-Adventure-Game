@@ -11,6 +11,8 @@ public class puzzleCombi : MonoBehaviour
     int[] input = new int[5];
     int position = 0;
 
+    public GameObject traps;
+
     void Awake() {
         DontDestroyOnLoad(gameObject);
     }
@@ -26,7 +28,7 @@ public class puzzleCombi : MonoBehaviour
     {
         if (position == answer.Length) {
             if (checkMatch()) {
-                //move spikes down and let player pass
+                traps.GetComponent<combiSpike>().Move();
             }
             position = 0;
         }
@@ -35,14 +37,17 @@ public class puzzleCombi : MonoBehaviour
     bool checkMatch() {
         for (int i = 0; i < answer.Length; ++i) {
             if (answer[i] != input[i]) {
+                print("Fail\n");
                 return false;
             }
         }
+        print("Congrats\n");
         return true;
     }
 
     public void Input(GameObject obj) {
         int index = findIndex(obj);
+        print(index + "\n");
         if (index != plates.Length && position < answer.Length) {
             input[position] = index;
             position++;

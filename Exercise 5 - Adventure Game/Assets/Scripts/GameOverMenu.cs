@@ -11,7 +11,7 @@ public class GameOverMenu : MonoBehaviour
     }
 
     public void Play() {
-        int ranInt = _mainManager.GetComponent<RandomLevel>().RandomizeNextLevel();
+        //int ranInt = _mainManager.GetComponent<RandomLevel>().RandomizeNextLevel();
         int ranInt = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadScene(ranInt);
     }

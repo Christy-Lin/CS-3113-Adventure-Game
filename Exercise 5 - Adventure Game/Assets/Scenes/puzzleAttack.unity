@@ -3226,7 +3226,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &654783895
+--- !u!114 &654783890
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3235,10 +3235,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 654783882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f83544457589472ab8e7fb53f74468b, type: 3}
+  m_Script: {fileID: 11500000, guid: 664e54923cf015642a28aa89d969cf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allowDamageInterval: 1
+  puzzleObj: {fileID: 0}
+  allowDamageInterval: 0.5
+  multKeys: 0
 --- !u!1001 &668698670
 PrefabInstance:
   m_ObjectHideFlags: 0

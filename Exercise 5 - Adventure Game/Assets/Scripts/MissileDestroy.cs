@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MissileDestroy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    GameManager _gameManager;
     void Start()
     {
-        
+        _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (this.transform.position.x > 8 || this.transform.position.x < -8 || 
@@ -22,6 +22,7 @@ public class MissileDestroy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
+            _gameManager.GetComponent<GameManager>().HealthDecr(10);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

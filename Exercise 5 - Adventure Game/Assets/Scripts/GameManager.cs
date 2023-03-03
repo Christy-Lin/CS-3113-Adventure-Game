@@ -10,8 +10,13 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI healthUI, livesUI;
     public GameObject pauseUI;
 
+    private Vector3 original_position;
+
     private void Start()
     {
+        
+        original_position = GameObject.FindWithTag("Player").transform.position;
+
         healthUI.text = "HEALTH: " + health;
         livesUI.text = "LIVES: " + lives;
         pauseUI.SetActive(false);
@@ -45,6 +50,9 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene("GameOver");
             }
             else {
+
+                GameObject.FindWithTag("Player").GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(original_position);
+
                 health = 100;
             
                 healthUI.text = "HEALTH: " + health;

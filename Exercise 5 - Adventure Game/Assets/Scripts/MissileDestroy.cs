@@ -29,7 +29,7 @@ public class MissileDestroy : MonoBehaviour
         if (other.CompareTag("Player")) {
             _audioSource.PlayOneShot(hitSound);
             _gameManager.GetComponent<GameManager>().HealthDecr(10);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

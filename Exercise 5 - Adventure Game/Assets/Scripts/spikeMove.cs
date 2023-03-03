@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class spikeMove : MonoBehaviour
+public class spikeMoveCoords : MonoBehaviour
 {
-    float speed = 1f;
-    float height = 0.5f;
+    public float speed;
+    public float distance;
+    public string direction;
     Vector3 curr_position;
     
     void Start() {
@@ -13,14 +15,23 @@ public class spikeMove : MonoBehaviour
         curr_position = transform.position;
     }
     void Update() {
-            // //get current position
-            // Vector3 curr_position = transform.position;
-            //calculate Y pos
-            float newY = Mathf.Sin(Time.time * speed) * height + curr_position.y;
-            // set Y to new Y
-            transform.position = new Vector3(curr_position.x, newY, curr_position.z); // * height;
+            if (direction == "X") {
+                float newX = Mathf.Sin(Time.time * speed) * distance + curr_position.x;
+                transform.position = new Vector3(newX, curr_position.y, curr_position.z);
+            }
+            else if (direction == "Y") {
+                float newY = Mathf.Sin(Time.time * speed) * distance + curr_position.y;
+                transform.position = new Vector3(curr_position.x, newY, curr_position.z);
+            }
+            else {  // direction == "Z"
+                float newZ = Mathf.Sin(Time.time * speed) * distance + curr_position.z;
+                transform.position = new Vector3(curr_position.x, curr_position.y, newZ);
+            }
     }
 
-
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
 }
-

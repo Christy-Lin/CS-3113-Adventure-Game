@@ -16,7 +16,7 @@ public class spikeMove : MonoBehaviour
         curr_position = transform.position;
         _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
-    
+
     void Update() {
             if (direction == "X") {
                 float newX = Mathf.Sin(Time.time * speed) * distance + curr_position.x;
@@ -34,7 +34,7 @@ public class spikeMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            _gameManager.GetComponent<GameManager>().LivesDecr(1);
+            _gameManager.GetComponent<GameManager>().LivesDecr(2);
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

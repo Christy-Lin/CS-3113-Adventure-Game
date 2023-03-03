@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    private double lives = 5;
+    private double lives = 10;
     public static bool pause = false;
     public TextMeshProUGUI livesUI;
     public GameObject pauseUI;
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         original_position = GameObject.FindWithTag("Player").transform.position;
 
         //healthUI.text = "HEALTH: " + health;
-        livesUI.text = "LIVES: " + lives;
+        livesUI.text = "HEALTH: " + lives;
         pauseUI.SetActive(false);
         GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
     }
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
     public void LivesDecr(double points) {
         lives -= points;
-        livesUI.text = "LIVES: " + lives;
+        livesUI.text = "HEALTH: " + lives;
         
         if (lives <= 0) {
             SceneManager.LoadScene("GameOver");
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
             GameObject.FindWithTag("Player").GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(original_position);
         
             //healthUI.text = "HEALTH: " + health;
-            livesUI.text = "LIVES: " + lives;
+            livesUI.text = "HEALTH: " + lives;
         }
     }
 

@@ -8,12 +8,12 @@ public class MissileDestroy : MonoBehaviour
     GameManager _gameManager;
 
     public AudioClip hitSound; 
-    AudioSource audio;
+    AudioSource _audioSource;
 
     void Start()
     {
         _gameManager = GameObject.FindObjectOfType<GameManager>();
-        audio = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -27,7 +27,7 @@ public class MissileDestroy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            audio.PlayOneShot(hitSound);
+            _audioSource.PlayOneShot(hitSound);
             _gameManager.GetComponent<GameManager>().HealthDecr(10);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     int keyTaken = 0; // keys collected by the player
 
     public AudioClip collectSound; 
-    AudioSource audio;
+    AudioSource _audioSource;
 
     void Start()
     {
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         if (puzzleObj) { //SceneManager.GetActiveScene().name == "puzzleCombination" &&
             //puzzleObj.GetComponent<puzzleCombi>().Start();
         }
-        audio = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         //picking up key
         if (other.CompareTag("Key")) {
-            audio.PlayOneShot(collectSound);
+            _audioSource.PlayOneShot(collectSound);
             keyTaken += 1; // adds a key point for the player
             // int keyNum = Int32.Parse(other.name.Substring(3));  // name of Key object... Key0,...
             Destroy(other.gameObject); // to pick it up

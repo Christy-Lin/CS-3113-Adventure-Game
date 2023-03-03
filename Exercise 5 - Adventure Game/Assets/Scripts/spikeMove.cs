@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class spikeMoveCoords : MonoBehaviour
+public class spikeMove : MonoBehaviour
 {
     public float speed;
     public float distance;

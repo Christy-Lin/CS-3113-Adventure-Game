@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 
 public class spikeMove : MonoBehaviour
 {
@@ -9,11 +9,14 @@ public class spikeMove : MonoBehaviour
     public float distance;
     public string direction;
     Vector3 curr_position;
+    GameManager _gameManager;
     
     void Start() {
         //get current position
         curr_position = transform.position;
+        _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
+    
     void Update() {
             if (direction == "X") {
                 float newX = Mathf.Sin(Time.time * speed) * distance + curr_position.x;
@@ -31,7 +34,8 @@ public class spikeMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            _gameManager.GetComponent<GameManager>().LivesDecr(1);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

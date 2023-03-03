@@ -28,7 +28,7 @@ public class MissileDestroy : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             _audioSource.PlayOneShot(hitSound);
-            _gameManager.GetComponent<GameManager>().HealthDecr(10);
+            _gameManager.GetComponent<GameManager>().LivesDecr(0.5);
             // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

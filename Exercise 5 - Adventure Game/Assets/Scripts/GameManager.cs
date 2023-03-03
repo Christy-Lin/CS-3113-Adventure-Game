@@ -5,9 +5,9 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    private int lives = 3, health = 100;
+    private double lives = 5;
     public static bool pause = false;
-    public TextMeshProUGUI healthUI, livesUI;
+    public TextMeshProUGUI livesUI;
     public GameObject pauseUI;
 
     private Vector3 original_position;
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         
         original_position = GameObject.FindWithTag("Player").transform.position;
 
-        healthUI.text = "HEALTH: " + health;
+        //healthUI.text = "HEALTH: " + health;
         livesUI.text = "LIVES: " + lives;
         pauseUI.SetActive(false);
         GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
@@ -35,31 +35,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int GetLives() {
+    public double GetLives() {
         return lives;
     }
 
-    public void HealthDecr(int points) {
-        health -= points;
-        healthUI.text = "HEALTH: " + health;
+    public void LivesDecr(double points) {
+        lives -= points;
+        livesUI.text = "LIVES: " + lives;
         
-        if (health <= 0)
-        {
-            lives -= 1;
+        if (lives <= 0) {
+            SceneManager.LoadScene("GameOver");
+        }
+        else {
 
-            if (lives <= 0) {
-                SceneManager.LoadScene("GameOver");
-            }
-            else {
-
-                GameObject.FindWithTag("Player").GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(original_position);
-
-                health = 100;
-            
-                healthUI.text = "HEALTH: " + health;
-                livesUI.text = "LIVES: " + lives;
-            }
- 
+            GameObject.FindWithTag("Player").GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(original_position);
+        
+            //healthUI.text = "HEALTH: " + health;
+            livesUI.text = "LIVES: " + lives;
         }
     }
 

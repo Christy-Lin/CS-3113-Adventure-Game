@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 
 public class combiSpike : MonoBehaviour
 {
@@ -12,11 +12,13 @@ public class combiSpike : MonoBehaviour
     bool collide;
 
     Vector3 curr_position;
+    GameManager _gameManager;
 
     void Start()
     {
         curr_position = transform.position;
         collide = true;
+        _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -40,7 +42,8 @@ public class combiSpike : MonoBehaviour
         if (other.CompareTag("Player") && collide) {
             print("\n" + collide);
             print("\ncollided");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            _gameManager.GetComponent<GameManager>().LivesDecr(1);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

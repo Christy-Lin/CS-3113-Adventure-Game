@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
 
         //damage
         if (other.CompareTag("Rook")) {
-            _gameManager.HealthDecr(25);
+            _gameManager.LivesDecr(0.5);
             allowDamage = false;
         }
 

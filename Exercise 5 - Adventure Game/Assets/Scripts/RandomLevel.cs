@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class RandomLevel : MonoBehaviour
 {
-
+    public static RandomLevel _mainManager;
     List<int> visited = new List<int>(5);
 
+    public int ranInt = 1;
+
     void Awake() {
+        if (_mainManager) {
+            Destroy(gameObject);
+            return;
+        }
+        
+        _mainManager = this;
         DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
         //ranInt = SceneManager.GetActiveScene().buildIndex + 1; 
+        RandomizeNextLevel();
     }
 
     public int RandomizeNextLevel() {
@@ -24,6 +33,7 @@ public class RandomLevel : MonoBehaviour
         }
 
         visited.Add(temp);
+        ranInt = temp;
         return temp;
     }
 

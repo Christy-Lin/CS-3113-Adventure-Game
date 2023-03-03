@@ -3113,6 +3113,10 @@ PrefabInstance:
       value: 0.08991175
       objectReference: {fileID: 0}
     - target: {fileID: 530094485741660229, guid: 4a969e42a4e1845419403b2782b11e74, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 530094485741660229, guid: 4a969e42a4e1845419403b2782b11e74, type: 3}
       propertyPath: m_Center.x
       value: 0.0000012069789
       objectReference: {fileID: 0}
@@ -3206,19 +3210,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &654783888
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654783882}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.14782727, y: 0.46165505, z: 0.1404151}
-  m_Center: {x: -0.05386625, y: 0.23068811, z: 0.05757236}
 --- !u!54 &654783889
 Rigidbody:
   m_ObjectHideFlags: 0

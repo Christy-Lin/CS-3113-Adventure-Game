@@ -16,8 +16,7 @@ public class Player : MonoBehaviour
     float secSinceLastDamage = 0.0f;
     public float allowDamageInterval = 0.5f;
 
-    public bool multKeys;
-    public int totalKey = 1; // total key count in the level
+    public int totalKey = 12; // total key count in the level
     int keyTaken = 0; // keys collected by the player
 
     void Start()
@@ -28,10 +27,6 @@ public class Player : MonoBehaviour
 
         if (puzzleObj) { //SceneManager.GetActiveScene().name == "puzzleCombination" &&
             //puzzleObj.GetComponent<puzzleCombi>().Start();
-        }
-
-        if (multKeys) {
-            totalKey = 12;
         }
     }
 

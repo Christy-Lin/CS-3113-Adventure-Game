@@ -28,6 +28,7 @@ public class puzzleCombi : MonoBehaviour
     {
         if (position == answer.Length) {
             if (checkMatch()) {
+                print("CheckMatch\n");
                 traps.GetComponent<combiSpike>().Move();
             }
             position = 0;

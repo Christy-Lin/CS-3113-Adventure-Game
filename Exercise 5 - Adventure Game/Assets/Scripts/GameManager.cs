@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
         healthUI.text = "HEALTH: " + health;
         livesUI.text = "LIVES: " + lives;
         pauseUI.SetActive(false);
+        GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
     }
 
     public void Update()

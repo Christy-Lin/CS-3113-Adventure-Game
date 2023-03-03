@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     int keyTaken = 0; // keys collected by the player
 
     public AudioClip collectSound; 
+    public AudioClip deathSfx;
     AudioSource _audioSource;
 
     void Start()
@@ -38,7 +39,7 @@ public class Player : MonoBehaviour
     {
         if (_gameManager.GetLives() <= 0) {
             //Instantiate(explosion, transform.position, Quaternion.identity);
-            //_audioSource.PlayOneShot(deathSfx);
+            _audioSource.PlayOneShot(deathSfx);
             Destroy(gameObject);
         }
 

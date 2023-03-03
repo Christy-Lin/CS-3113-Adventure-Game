@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public float allowDamageInterval = 0.5f;
 
     public bool multKeys;
-    int totalKey = 1; // total key count in the level
+    public int totalKey = 1; // total key count in the level
     int keyTaken = 0; // keys collected by the player
 
     void Start()
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
             // int keyNum = Int32.Parse(other.name.Substring(3));  // name of Key object... Key0,...
             Destroy(other.gameObject); // to pick it up
             // PublicVars.hasKey[keyNum] = true;
-            keyTaken++; // adds a key point for the player
+            // keyTaken++; // adds a key point for the player
             if (keyTaken == totalKey) {
                 PublicVars.hasKey = true;
             }

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 530094485741660229}
   - component: {fileID: -5407824666359776064}
   - component: {fileID: -3812060416168152138}
-  - component: {fileID: 7250052812605019402}
   - component: {fileID: 8019793753247607784}
+  - component: {fileID: -7287896985170252875}
   m_Layer: 0
   m_Name: Queen
   m_TagString: Player
@@ -140,22 +140,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7250052812605019402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4645557051727922055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 664e54923cf015642a28aa89d969cf16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzleObj: {fileID: 0}
-  allowDamageInterval: 0.5
-  totalKey: 12
-  collectSound: {fileID: 8300000, guid: 3ef590fb89d4ae64aba7058dec80b85c, type: 3}
 --- !u!82 &8019793753247607784
 AudioSource:
   m_ObjectHideFlags: 0
@@ -252,3 +236,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-7287896985170252875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4645557051727922055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664e54923cf015642a28aa89d969cf16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleObj: {fileID: 0}
+  allowDamageInterval: 0.5
+  totalKey: 12
+  collectSound: {fileID: 8300000, guid: 3ef590fb89d4ae64aba7058dec80b85c, type: 3}
+  rookSound: {fileID: 8300000, guid: 08fbef118a8d541c9a13ba43efd3531a, type: 3}

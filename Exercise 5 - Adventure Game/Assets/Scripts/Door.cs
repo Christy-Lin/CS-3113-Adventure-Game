@@ -11,7 +11,7 @@ public class Door : MonoBehaviour
     int ranInt;
 
     void Start() {
-        _mainManager = FindGameObjectWithTag("Main");
+        // _mainManager = FindGameObjectWithTag("Main");
     }
 
     private void OnTriggerEnter(Collider other) {

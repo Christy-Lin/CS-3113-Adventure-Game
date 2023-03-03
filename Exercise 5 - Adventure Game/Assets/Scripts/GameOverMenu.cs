@@ -7,7 +7,7 @@ public class GameOverMenu : MonoBehaviour
     GameObject _mainManager;
 
     void Start() {
-        _mainManager = FindGameObjectWithTag("Main");
+        _mainManager = GameObject.FindGameObjectWithTag("Main");
     }
 
     public void Play() {

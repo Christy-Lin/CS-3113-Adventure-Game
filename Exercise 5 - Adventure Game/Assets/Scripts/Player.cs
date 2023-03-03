@@ -19,8 +19,7 @@ public class Player : MonoBehaviour
     public int totalKey = 12; // total key count in the level
     int keyTaken = 0; // keys collected by the player
 
-    public AudioClip collectSound; 
-    public AudioClip deathSfx;
+    public AudioClip collectSound, deathSfx, hitSound; 
     AudioSource _audioSource;
 
     void Start()
@@ -80,6 +79,18 @@ public class Player : MonoBehaviour
         //damage
         if (other.CompareTag("Rook")) {
             _gameManager.LivesDecr(1);
+            allowDamage = false;
+        }
+
+        if (other.CompareTag("missile")) {
+            _audioSource.PlayOneShot(hitSound, 0.3f);
+            _gameManager.LivesDecr(1);
+            allowDamage = false;
+        }
+
+        if (other.CompareTag("Spike")) {
+            _audioSource.PlayOneShot(hitSound, 0.3f);
+            _gameManager.LivesDecr(2);
             allowDamage = false;
         }
 

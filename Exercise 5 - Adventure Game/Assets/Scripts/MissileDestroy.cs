@@ -7,7 +7,7 @@ public class MissileDestroy : MonoBehaviour
 {
     GameManager _gameManager;
 
-    public AudioClip hitSound; 
+    public AudioClip hitSound;
     AudioSource _audioSource;
 
     void Start()
@@ -25,11 +25,11 @@ public class MissileDestroy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
+/*     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             _audioSource.PlayOneShot(hitSound);
             _gameManager.GetComponent<GameManager>().LivesDecr(1);
             // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-    }
+    } */
 }

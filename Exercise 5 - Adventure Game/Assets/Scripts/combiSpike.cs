@@ -38,12 +38,13 @@ public class combiSpike : MonoBehaviour
         move = true;
     }
 
-    private void OnTriggerEnter(Collider other) {
+/*     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player") && collide) {
             print("\n" + collide);
             print("\ncollided");
-            _gameManager.GetComponent<GameManager>().LivesDecr(1);
+            _gameManager.GetComponent<GameManager>().LivesDecr(2);
+            _gameManager.GetComponent<GameManager>().teleport();
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-    }
+    } */
 }

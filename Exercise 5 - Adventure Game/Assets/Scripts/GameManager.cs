@@ -5,11 +5,11 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    private double lives = 10;
+    private int lives = 10;
     public static bool pause = false;
+
     public TextMeshProUGUI livesUI;
     public GameObject pauseUI;
-
     private Vector3 original_position;
 
     private void Start()
@@ -35,11 +35,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public double GetLives() {
+    public int GetLives() {
         return lives;
     }
 
-    public void LivesDecr(double points) {
+    public void LivesDecr(int points) {
         lives -= points;
         livesUI.text = "HEALTH: " + lives;
         
@@ -48,8 +48,7 @@ public class GameManager : MonoBehaviour
         }
         else {
 
-            GameObject.FindWithTag("Player").GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(original_position);
-        
+           teleport();        
             //healthUI.text = "HEALTH: " + health;
             livesUI.text = "HEALTH: " + lives;
         }
@@ -67,8 +66,8 @@ public class GameManager : MonoBehaviour
         pause = true;
     }
 
-    public void initPuzzleLock() {
-        
+    public void teleport() {
+        GameObject.FindWithTag("Player").GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(original_position);
     }
 
 }

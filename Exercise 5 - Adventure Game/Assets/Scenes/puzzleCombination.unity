@@ -192,6 +192,10 @@ PrefabInstance:
       value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3343041971278428983, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343041971278428983, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
@@ -315,17 +319,6 @@ GameObject:
 --- !u!114 &153516247 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6162391803904823702, guid: 3baf3ee0c83d8b943a6412540ffe91fe, type: 3}
-  m_PrefabInstance: {fileID: 153516245}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &153516248 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 17386958925660764, guid: 3baf3ee0c83d8b943a6412540ffe91fe, type: 3}
   m_PrefabInstance: {fileID: 153516245}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -1106,6 +1099,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: d5e552f965261e645a4dbeb835e5238f, type: 3}
     - target: {fileID: -7287896985170252875, guid: 4a969e42a4e1845419403b2782b11e74, type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6dc759177b51f40be9dbd3e669331f67, type: 3}
+    - target: {fileID: -7287896985170252875, guid: 4a969e42a4e1845419403b2782b11e74, type: 3}
+      propertyPath: totalKey
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7287896985170252875, guid: 4a969e42a4e1845419403b2782b11e74, type: 3}
       propertyPath: puzzleObj
       value: 
       objectReference: {fileID: 1996790522}
@@ -1165,6 +1166,10 @@ PrefabInstance:
       propertyPath: puzzleObj
       value: 
       objectReference: {fileID: 1996790522}
+    - target: {fileID: 8019793753247607784, guid: 4a969e42a4e1845419403b2782b11e74, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8019793753247607784, guid: 4a969e42a4e1845419403b2782b11e74, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -1893,7 +1898,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967bf400bbf7aba47b7c15e6122ee4b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthUI: {fileID: 153516248}
   livesUI: {fileID: 153516247}
   pauseUI: {fileID: 153516246}
 --- !u!4 &1383891434

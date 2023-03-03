@@ -35,6 +35,7 @@ public class spikeMove : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             _gameManager.GetComponent<GameManager>().LivesDecr(2);
+            _gameManager.GetComponent<GameManager>().teleport();
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

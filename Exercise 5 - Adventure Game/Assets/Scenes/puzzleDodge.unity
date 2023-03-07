@@ -2205,6 +2205,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1193468198 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7693191585833312842, guid: 3baf3ee0c83d8b943a6412540ffe91fe, type: 3}
+  m_PrefabInstance: {fileID: 1193468195}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1272141628 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 421255753674307630, guid: da8ccc24bd3cb5e4db332c171027e02e, type: 3}
@@ -2254,7 +2265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967bf400bbf7aba47b7c15e6122ee4b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalKey: 12
   livesUI: {fileID: 1193468197}
+  keysUI: {fileID: 1193468198}
   pauseUI: {fileID: 1193468196}
 --- !u!4 &1387483063
 Transform:
@@ -2360,6 +2373,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 845435004318351365, guid: 05eb22b01f65f274191ba8ec4f930207, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b5a4e1e216c47642a646c12cf294c7b, type: 2}
     - target: {fileID: 845435004318351367, guid: 05eb22b01f65f274191ba8ec4f930207, type: 3}
       propertyPath: m_Name
       value: Floor

@@ -8,7 +8,10 @@ public class GameManager : MonoBehaviour
     private int lives = 10;
     public static bool pause = false;
 
-    public TextMeshProUGUI livesUI;
+    public int totalKey = 12; // total key count in the level
+    int keyTaken = 0; // keys collected by the player
+
+    public TextMeshProUGUI livesUI, keysUI;
     public GameObject pauseUI;
     private Vector3 original_position;
 
@@ -16,11 +19,11 @@ public class GameManager : MonoBehaviour
     {
         
         original_position = GameObject.FindWithTag("Player").transform.position;
-
-        //healthUI.text = "HEALTH: " + health;
-        livesUI.text = "HEALTH: " + lives;
         pauseUI.SetActive(false);
         GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
+
+        livesUI.text = "HEALTH: " + lives;
+        keysUI.text = "KEYS: " + keyTaken + "/" + totalKey;
     }
 
     public void Update()
@@ -51,6 +54,14 @@ public class GameManager : MonoBehaviour
            teleport();        
             //healthUI.text = "HEALTH: " + health;
             livesUI.text = "HEALTH: " + lives;
+        }
+    }
+
+    public void KeyIncr() {
+        keyTaken++;
+        keysUI.text = "KEYS: " + keyTaken + "/" + totalKey;
+        if (keyTaken == totalKey) {
+            PublicVars.hasKey = true;
         }
     }
 

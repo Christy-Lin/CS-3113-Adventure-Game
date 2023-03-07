@@ -16,9 +16,6 @@ public class Player : MonoBehaviour
     float secSinceLastDamage = 0.0f;
     public float allowDamageInterval = 0.5f;
 
-    public int totalKey = 12; // total key count in the level
-    int keyTaken = 0; // keys collected by the player
-
     public AudioClip collectSound, deathSfx, hitSound; 
     AudioSource _audioSource;
 
@@ -66,14 +63,8 @@ public class Player : MonoBehaviour
         //picking up key
         if (other.CompareTag("Key")) {
             _audioSource.PlayOneShot(collectSound);
-            keyTaken += 1; // adds a key point for the player
-            // int keyNum = Int32.Parse(other.name.Substring(3));  // name of Key object... Key0,...
-            Destroy(other.gameObject); // to pick it up
-            // PublicVars.hasKey[keyNum] = true;
-            // keyTaken++; // adds a key point for the player
-            if (keyTaken == totalKey) {
-                PublicVars.hasKey = true;
-            }
+            _gameManager.GetComponent<GameManager>().KeyIncr();
+            Destroy(other.gameObject);
         }
 
         //damage

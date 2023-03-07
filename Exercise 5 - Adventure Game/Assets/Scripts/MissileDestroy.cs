@@ -7,13 +7,13 @@ public class MissileDestroy : MonoBehaviour
 {
     GameManager _gameManager;
 
-    public AudioClip hitSound;
-    AudioSource _audioSource;
+    //public AudioClip hitSound;
+    //AudioSource _audioSource;
 
     void Start()
     {
         _gameManager = GameObject.FindObjectOfType<GameManager>();
-        _audioSource = GetComponent<AudioSource>();
+        //_audioSource = GetComponent<AudioSource>();
     }
 
 

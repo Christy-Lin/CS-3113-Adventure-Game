@@ -90,5 +90,4 @@ public class Player : MonoBehaviour
             allowDamage = false;
         }
     }
-
 }

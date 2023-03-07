@@ -10,11 +10,15 @@ public class CameraTrack : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        offset = transform.position - player.transform.position;
+        if (player) {
+            offset = transform.position - player.transform.position;
+        }
     }
 
     private void LateUpdate() {
-        transform.position = player.transform.position + offset;
+        if (player) {
+            transform.position = player.transform.position + offset;
+        }
     }
 
 }

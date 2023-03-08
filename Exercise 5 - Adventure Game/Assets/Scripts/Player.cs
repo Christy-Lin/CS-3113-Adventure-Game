@@ -87,6 +87,8 @@ public class Player : MonoBehaviour
 
         if (other.CompareTag("Plate")) { 
             puzzleObj.GetComponent<puzzleCombi>().Input(other.gameObject);
+            // change color of plate to green
+            other.GetComponent<Renderer>().material.color = new Color(1, 0.92f, 0.016f, 1);
             allowDamage = false;
         }
     }

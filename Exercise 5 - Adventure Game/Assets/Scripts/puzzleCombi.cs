@@ -31,6 +31,13 @@ public class puzzleCombi : MonoBehaviour
                 print("CheckMatch\n");
                 traps.GetComponent<combiSpike>().Move();
             }
+            else {
+                // if not a match, change the color of object with tag "Plate" to original color
+                // original color: (0, 0.7992163, 1, 1)
+                foreach (GameObject plate in plates) {
+                    plate.GetComponent<Renderer>().material.color = new Color(0, 0.7992163f, 1, 1);
+                }
+            }
             position = 0;
         }
     }

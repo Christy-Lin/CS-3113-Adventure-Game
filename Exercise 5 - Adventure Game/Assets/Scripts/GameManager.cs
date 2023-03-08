@@ -81,4 +81,8 @@ public class GameManager : MonoBehaviour
         GameObject.FindWithTag("Player").GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(original_position);
     }
 
+    public int getKeys() {
+        return keyTaken;
+    }
+
 }

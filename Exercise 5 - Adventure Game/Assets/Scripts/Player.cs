@@ -91,5 +91,11 @@ public class Player : MonoBehaviour
             other.GetComponent<Renderer>().material.color = new Color(1, 0.92f, 0.016f, 1);
             allowDamage = false;
         }
+
+        if (other.CompareTag("WrongDoor")) {
+            // _audioSource.PlayOneShot(hitSound, 0.3f);
+            _gameManager.LivesDecr(2);
+            allowDamage = false;
+        }
     }
 }

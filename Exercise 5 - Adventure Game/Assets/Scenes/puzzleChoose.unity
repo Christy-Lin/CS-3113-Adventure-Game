@@ -144,6 +144,18 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4709636
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Center.x
+      value: -0.23548208
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Center.z
+      value: -8.784343e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -248,6 +260,14 @@ PrefabInstance:
     - target: {fileID: 641186621772180664, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1694794
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Center.x
+      value: -0.0847397
       objectReference: {fileID: 0}
     - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
       propertyPath: m_IsTrigger
@@ -633,6 +653,14 @@ PrefabInstance:
     - target: {fileID: 641186621772180664, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4156448
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Center.x
+      value: -0.20782238
       objectReference: {fileID: 0}
     - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
       propertyPath: m_IsTrigger
@@ -1776,6 +1804,14 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Size.x
+      value: 1.220787
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Center.x
+      value: -0.11039354
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -2843,6 +2879,18 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Size.x
+      value: 1.6167697
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Center.x
+      value: -0.3083848
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Center.z
+      value: -2.2252474e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -3324,6 +3372,18 @@ PrefabInstance:
     - target: {fileID: 641186621772180664, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4933717
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Center.x
+      value: -0.24668592
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
+      propertyPath: m_Center.z
+      value: -1.0854153e-16
       objectReference: {fileID: 0}
     - target: {fileID: 2113911144468100870, guid: c7b2203b07ba044eda7805f0854409ef, type: 3}
       propertyPath: m_IsTrigger
@@ -4330,7 +4390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8725817688512654481, guid: c570036cdd76e41c5b010a66ee8b2918, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 8725817688512654481, guid: c570036cdd76e41c5b010a66ee8b2918, type: 3}
       propertyPath: m_LocalPosition.y

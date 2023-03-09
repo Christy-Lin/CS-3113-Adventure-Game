@@ -26,10 +26,10 @@ public class Teleport : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             // FIRST, check if the name of self... like gemeObject.name??
-            // if it's Door (6), then load next scene:
-            
-            // OTHERWISE, teleport:
-            _navMeshAgent.Warp(teleportTarget.transform.position);
+            // if it's Door (6), then load next scene, OTHERWISE< teleport
+            if (gameObject.name != "Door (6)") {
+                _navMeshAgent.Warp(teleportTarget.transform.position);
+            }
         }
 
 

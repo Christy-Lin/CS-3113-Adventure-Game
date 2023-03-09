@@ -27,9 +27,6 @@ EditorBuildSettings:
     path: Assets/Scenes/puzzleAttack.unity
     guid: 19edf1ef5664a46f780b3577b0f0cd11
   - enabled: 1
-    path: Assets/Scenes/puzzleChoose.unity
-    guid: fb1e0f19a555c1343a8ca7cbd539c580
-  - enabled: 1
     path: Assets/Scenes/YouWin.unity
     guid: 089f3293d79570d469af1a5030fc0f50
   - enabled: 1

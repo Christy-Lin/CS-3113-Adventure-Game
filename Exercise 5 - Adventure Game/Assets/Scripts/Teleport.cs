@@ -28,6 +28,7 @@ public class Teleport : MonoBehaviour
             // FIRST, check if the name of self... like gemeObject.name??
             // if it's Door (6), then load next scene, OTHERWISE< teleport
             if (gameObject.name != "Door (6)") {
+                // if the gameObject.tag = Wrong tag... telepport... wait 3 sec... teleport to room1
                 _navMeshAgent.Warp(teleportTarget.transform.position);
             }
         }

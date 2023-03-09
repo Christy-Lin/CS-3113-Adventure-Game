@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+
     public int GetLives() {
         return lives;
     }
@@ -57,12 +59,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+
+    public void teleport() {
+        GameObject.FindWithTag("Player").GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(original_position);
+    }
+
+    public int getKeys() {
+        return keyTaken;
+    }
+
     public void KeyIncr() {
         keyTaken++;
         keysUI.text = "KEYS: " + keyTaken + "/" + totalKey;
         if (keyTaken == totalKey) {
             PublicVars.hasKey = true;
         }
+    }
+
+
+
+    public void PlayGame() {
+        //Debug.Log("Yay, you did it! Moving to " + sceneToLoad);
+        int ranInt = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(ranInt);
+        
     }
 
     public void Resume() {
@@ -77,12 +98,7 @@ public class GameManager : MonoBehaviour
         pause = true;
     }
 
-    public void teleport() {
-        GameObject.FindWithTag("Player").GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(original_position);
+    public void QuitGame() {
+        Application.Quit();
     }
-
-    public int getKeys() {
-        return keyTaken;
-    }
-
 }

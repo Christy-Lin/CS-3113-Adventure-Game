@@ -8,6 +8,7 @@ public class Teleport : MonoBehaviour
     public Transform teleportTarget;
     GameObject player;
     NavMeshAgent _navMeshAgent;
+    Vector3 starting_point;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,7 @@ public class Teleport : MonoBehaviour
         // _navMeshAgent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         _navMeshAgent = player.GetComponent<NavMeshAgent>();    // this is the player
+        starting_point = player.transform.position;
     }
 
     // Update is called once per frame
@@ -25,15 +27,28 @@ public class Teleport : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            // FIRST, check if the name of self... like gemeObject.name??
-            // if it's Door (6), then load next scene, OTHERWISE< teleport
+            // if it's Door (6), then Door.cs script will be used for next level
+            // otherwise: teleport
             if (gameObject.name != "Door (6)") {
-                // if the gameObject.tag = Wrong tag... telepport... wait 3 sec... teleport to room1
-                _navMeshAgent.Warp(teleportTarget.transform.position);
+                // if teleporting to the room where you die (Teleport5), coroutine
+                if (teleportTarget.name == "Teleport5") {
+                    StartCoroutine(WrongDoor());
+                }
+                // otherwise just teleport
+                else {
+                    _navMeshAgent.Warp(teleportTarget.transform.position);
+                }
             }
         }
 
 
+    }
+
+    IEnumerator WrongDoor() {
+        // teleport, wait, teleport back
+        _navMeshAgent.Warp(teleportTarget.transform.position);
+        yield return new WaitForSeconds(3);
+        _navMeshAgent.Warp(starting_point);
     }
 
 

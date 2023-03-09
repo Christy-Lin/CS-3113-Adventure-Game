@@ -960,6 +960,10 @@ PrefabInstance:
       propertyPath: pauseUI
       value: 
       objectReference: {fileID: 28672102}
+    - target: {fileID: 6909138943874831978, guid: 26248205a4eef1c488b349075141808e, type: 3}
+      propertyPath: totalKey
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6909138943874831979, guid: 26248205a4eef1c488b349075141808e, type: 3}
       propertyPath: m_RootOrder
       value: 4

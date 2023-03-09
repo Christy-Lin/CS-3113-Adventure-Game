@@ -33,18 +33,31 @@ public class Teleport : MonoBehaviour
         if (other.CompareTag("Player")) {
             // if it's Door (6), then Door.cs script will be used for next level
             // otherwise: teleport
-            if (gameObject.name != "Door (6)") {
-                // if teleporting to the room where you die (Teleport5), coroutine
-                if (teleportTarget.name == "Teleport5") {
-                    // _audioSource.PlayOneShot(wrongSound);
-                    StartCoroutine(WrongDoor());
-                }
-                // otherwise just teleport
-                else {
+
+            // if teleporting to Teleport5 (wrong wroom)... coroutine:
+            if (gameObject.name == "Door" || gameObject.name == "Door (2)" || gameObject.name == "Door (4)" || gameObject.name == "Door (7)") {
+                StartCoroutine(WrongDoor());
+            }
+            else {
+                // only teleport if not door 6 (bc that uses the Door.cs script to load next scene)
+                if(gameObject.name != "NextDoor") {
                     _audioSource.PlayOneShot(nextSound);
                     _navMeshAgent.Warp(teleportTarget.transform.position);
                 }
             }
+
+            // if (gameObject.name != "Door (6)") {
+            //     // if teleporting to the room where you die (Teleport5), coroutine
+            //     if (teleportTarget.name == "Teleport5") {
+            //         // _audioSource.PlayOneShot(wrongSound);
+            //         StartCoroutine(WrongDoor());
+            //     }
+            //     // otherwise just teleport
+            //     else {
+            //         _audioSource.PlayOneShot(nextSound);
+            //         _navMeshAgent.Warp(teleportTarget.transform.position);
+            //     }
+            // }
         }
 
 

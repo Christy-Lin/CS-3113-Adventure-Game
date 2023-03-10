@@ -1988,6 +1988,7 @@ MonoBehaviour:
   keysUI: {fileID: 153516248}
   doorUI: {fileID: 0}
   pauseUI: {fileID: 153516246}
+  explosion: {fileID: 73581514547920192, guid: 13e0f309ab0939b4eab96959b23ea7cc, type: 3}
 --- !u!4 &1383891434
 Transform:
   m_ObjectHideFlags: 0

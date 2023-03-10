@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 
     UnityEngine.AI.NavMeshAgent _navMeshAgent;
     Camera mainCam;
-    public GameObject puzzleObj;
+    public GameObject puzzleObj, bossFightObj, explosion;
 
     bool allowDamage = true;
     float secSinceLastDamage = 0.0f;
@@ -26,17 +26,17 @@ public class Player : MonoBehaviour
         mainCam = Camera.main;
         _navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         _gameManager = GameObject.FindObjectOfType<GameManager>();
+        _audioSource = GetComponent<AudioSource>();
 
         if (puzzleObj) { //SceneManager.GetActiveScene().name == "puzzleCombination" &&
             //puzzleObj.GetComponent<puzzleCombi>().Start();
         }
-        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         if (_gameManager.GetLives() <= 0) {
-            //Instantiate(explosion, transform.position, Quaternion.identity);
+            Instantiate(explosion, transform.position, Quaternion.identity);
             _audioSource.PlayOneShot(deathSfx);
             Destroy(gameObject);
         }
@@ -69,6 +69,9 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         //picking up key
         if (other.CompareTag("Key")) {
+            if (bossFightObj) {
+                bossFightObj.GetComponent<BossFight>().bossHealth();
+            }
             _audioSource.PlayOneShot(collectSound);
             _gameManager.GetComponent<GameManager>().KeyIncr();
             Destroy(other.gameObject);

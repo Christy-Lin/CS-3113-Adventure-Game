@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        dmgCheck();
         if (_gameManager.GetLives() <= 0) {
             Instantiate(explosion, transform.position, Quaternion.identity);
             _audioSource.PlayOneShot(deathSfx);
@@ -69,9 +70,6 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         //picking up key
         if (other.CompareTag("Key")) {
-            if (bossFightObj) {
-                bossFightObj.GetComponent<BossFight>().bossHealth();
-            }
             _audioSource.PlayOneShot(collectSound);
             _gameManager.GetComponent<GameManager>().KeyIncr();
             Destroy(other.gameObject);
@@ -79,19 +77,19 @@ public class Player : MonoBehaviour
 
         //damage
         else if (other.CompareTag("Rook")) {
-            _gameManager.LivesDecr(1);
+            if (allowDamage) { _gameManager.LivesDecr(1); }
             allowDamage = false;
         }
 
         else if (other.CompareTag("missile")) {
             _audioSource.PlayOneShot(hitSound, 0.3f);
-            _gameManager.LivesDecr(1);
+            if (allowDamage) { _gameManager.LivesDecr(1); }
             allowDamage = false;
         }
 
         else if (other.CompareTag("Spike")) {
             _audioSource.PlayOneShot(hitSound, 0.3f);
-            _gameManager.LivesDecr(2);
+            if (allowDamage) { _gameManager.LivesDecr(2); }
             allowDamage = false;
         }
 
@@ -102,7 +100,11 @@ public class Player : MonoBehaviour
             // other.GetComponent<Renderer>().material.color = new Color(1, 0.92f, 0.016f, 1);
             other.GetComponent<Renderer>().material = purplePlate;
             allowDamage = false;
-            // plateCount++;
+
+            if (bossFightObj) {
+                bossFightObj.GetComponent<BossFight>().bossHealth();
+                Destroy(other.gameObject);
+            }
 
             if (plateCount <= 4) {
                 plateCount++;
@@ -122,7 +124,7 @@ public class Player : MonoBehaviour
 
         else if (other.CompareTag("WrongDoor")) {
             // _audioSource.PlayOneShot(hitSound, 0.3f);
-            _gameManager.LivesDecr(2);
+            if (allowDamage) { _gameManager.LivesDecr(2); }
             allowDamage = false;
         }
     }

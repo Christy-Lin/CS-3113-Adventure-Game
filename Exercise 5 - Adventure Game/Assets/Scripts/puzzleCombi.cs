@@ -10,7 +10,7 @@ public class puzzleCombi : MonoBehaviour
     int[] answer = {1,4,3,0,2};
     int[] input = new int[5];
     int position = 0;
-    public bool match = true;
+    bool match = true;
 
     public GameObject traps;
     public Material plateOriginal;
@@ -35,6 +35,7 @@ public class puzzleCombi : MonoBehaviour
             }
 
             position = 0;
+            match = true;
         }
 
         // if plateCount (from Player.cs == 5, change material)
@@ -53,7 +54,7 @@ public class puzzleCombi : MonoBehaviour
                 return false;
             }
         // }
-        print("Congrats\n");
+        print("Match\n");
         return true;
     }
 
@@ -63,9 +64,9 @@ public class puzzleCombi : MonoBehaviour
         if (index != plates.Length && position < answer.Length) {   // still input left for sequence
             input[position] = index;    // enter into input arr
             match &= checkMatch(position);
+            print("match: " + match + "\n");
 
-            if (match) { position++; }  //
-            else { position = 0;}
+            position++;
         }
  
     }

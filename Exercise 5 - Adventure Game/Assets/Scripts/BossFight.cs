@@ -9,35 +9,42 @@ public class BossFight : MonoBehaviour
     public AudioClip deathSfx;
     
     GameObject[] patterns;
-    GameObject king, door, explosion;
+    GameObject king, explosion;
+    public GameObject key, door;
     int position = 0;
     int health = 3;
+    //float time = 1f;
+
     bool allowSwitch = true;
-    float secSince = 0f;
-    public float swapInterv = 1f;
+    float secSince = 0.0f;
+    float swapInterv = 5f;
     
     void Start()
     {
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         patterns = GameObject.FindGameObjectsWithTag("Pattern");
         _audioSource = GetComponent<AudioSource>();
+
+        for(int i = 0; i < patterns.Length; ++i) {
+            patterns[i].SetActive(false);
+        }
         door.SetActive(false);
+        key.SetActive(false);
 
         kingMissles();
-        
         //GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().StopMusic();
     }
 
     void Update()
     {
-
-        if (Mathf.Sin(Time.time * 2f) == 0) {
-            //cyclePatterns();
-        }
+        switchCheck();
+        if(allowSwitch) { cyclePatterns(); }
         
         if (health == 0) {
+            allowSwitch = false;
             Instantiate(explosion, transform.position, Quaternion.identity);
             _audioSource.PlayOneShot(deathSfx);
+            key.SetActive(true);
             door.SetActive(true);
             Destroy(king);
         }
@@ -48,6 +55,7 @@ public class BossFight : MonoBehaviour
     }
 
     private void switchCheck() {
+        print(secSince + ", " + swapInterv + "\n");
         if (!allowSwitch) {
             secSince += Time.deltaTime;
             
@@ -56,7 +64,7 @@ public class BossFight : MonoBehaviour
                 secSince = 0f;
             }
         }
-    }
+    } 
 
     private void cyclePatterns() {
         if (position > 0 ) {
@@ -67,8 +75,8 @@ public class BossFight : MonoBehaviour
             position = 0;
         }
 
-        patterns[position].SetActive(true);
-        print(position + "\n");
+        patterns[position].SetActive(true); 
+        allowSwitch = false;
         position++;
     }
 
@@ -79,5 +87,4 @@ public class BossFight : MonoBehaviour
         GetComponent<BossShoot>().shoot(3);
         GetComponent<BossShoot>().shoot(4);
     }
-
 }

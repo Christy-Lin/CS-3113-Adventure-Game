@@ -59,6 +59,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    IEnumerator textPause() {
+        yield return new WaitForSeconds(3);
+        _gameManager.showDoorText("");
+    }
+
     private void OnTriggerEnter(Collider other) {
         //picking up key
         if (other.CompareTag("Key")) {
@@ -68,31 +73,38 @@ public class Player : MonoBehaviour
         }
 
         //damage
-        if (other.CompareTag("Rook")) {
+        else if (other.CompareTag("Rook")) {
             _gameManager.LivesDecr(1);
             allowDamage = false;
         }
 
-        if (other.CompareTag("missile")) {
+        else if (other.CompareTag("missile")) {
             _audioSource.PlayOneShot(hitSound, 0.3f);
             _gameManager.LivesDecr(1);
             allowDamage = false;
         }
 
-        if (other.CompareTag("Spike")) {
+        else if (other.CompareTag("Spike")) {
             _audioSource.PlayOneShot(hitSound, 0.3f);
             _gameManager.LivesDecr(2);
             allowDamage = false;
         }
 
-        if (other.CompareTag("Plate")) { 
+        else if (other.CompareTag("Plate")) { 
             puzzleObj.GetComponent<puzzleCombi>().Input(other.gameObject);
             // change color of plate to green
             other.GetComponent<Renderer>().material.color = new Color(1, 0.92f, 0.016f, 1);
             allowDamage = false;
         }
 
-        if (other.CompareTag("WrongDoor")) {
+        else if (other.CompareTag("Door")) {
+            if (!PublicVars.hasKey) {
+                _gameManager.showDoorText("Door is locked!");
+            }
+            StartCoroutine("textPause");
+        }
+
+        else if (other.CompareTag("WrongDoor")) {
             // _audioSource.PlayOneShot(hitSound, 0.3f);
             _gameManager.LivesDecr(2);
             allowDamage = false;

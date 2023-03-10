@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public int totalKey = 12; // total key count in the level
     int keyTaken = 0; // keys collected by the player
 
-    public TextMeshProUGUI livesUI, keysUI;
+    public TextMeshProUGUI livesUI, keysUI, doorUI;
     public GameObject pauseUI;
     private Vector3 original_position;
 
@@ -65,6 +65,13 @@ public class GameManager : MonoBehaviour
         GameObject.FindWithTag("Player").GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(original_position);
     }
 
+
+
+    public void showDoorText(string text) {
+        doorUI.text = text;
+    }
+
+
     public int getKeys() {
         return keyTaken;
     }
@@ -81,9 +88,9 @@ public class GameManager : MonoBehaviour
 
     public void PlayGame() {
         //Debug.Log("Yay, you did it! Moving to " + sceneToLoad);
-        int ranInt = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadScene(ranInt);
-        
+        //int ranInt = SceneManager.GetActiveScene().buildIndex + 1;
+       // SceneManager.LoadScene(ranInt);
+       SceneManager.LoadScene(1);
     }
 
     public void Resume() {

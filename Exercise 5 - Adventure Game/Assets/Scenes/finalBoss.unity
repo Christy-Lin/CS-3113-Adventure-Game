@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18337692, g: 0.2289852, b: 0.3061015, a: 1}
+  m_IndirectSpecularColor: {r: 0.18337646, g: 0.22898443, b: 0.30610052, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 686899745067822563, guid: afb5dea3f906a6042ae15252d30e3784, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 686899745067822563, guid: afb5dea3f906a6042ae15252d30e3784, type: 3}
       propertyPath: m_LocalPosition.x
@@ -477,7 +477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5418821195963144509, guid: 4a969e42a4e1845419403b2782b11e74, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5418821195963144509, guid: 4a969e42a4e1845419403b2782b11e74, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3890,7 +3890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 17386959064248832, guid: 3baf3ee0c83d8b943a6412540ffe91fe, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 17386959064248832, guid: 3baf3ee0c83d8b943a6412540ffe91fe, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4311,7 +4311,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1314690419
 PrefabInstance:
@@ -5712,7 +5712,7 @@ Transform:
   - {fileID: 1391791382}
   - {fileID: 1494517511}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1551486858
 PrefabInstance:
@@ -5995,7 +5995,7 @@ Transform:
   - {fileID: 1398935162}
   - {fileID: 1434624061}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1649057195
 PrefabInstance:
@@ -7251,7 +7251,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6909138943445021421
 MonoBehaviour:
@@ -7268,6 +7268,7 @@ MonoBehaviour:
   totalKey: 12
   livesUI: {fileID: 1201929337}
   keysUI: {fileID: 1201929336}
+  doorUI: {fileID: 0}
   pauseUI: {fileID: 1201929335}
 --- !u!1 &6909138943445021422
 GameObject:

@@ -85,6 +85,7 @@ public class Player : MonoBehaviour
             _audioSource.PlayOneShot(hitSound, 0.3f);
             _gameManager.LivesDecr(1);
             allowDamage = false;
+            Destroy(other.gameObject);
         }
 
         else if (other.CompareTag("Spike")) {

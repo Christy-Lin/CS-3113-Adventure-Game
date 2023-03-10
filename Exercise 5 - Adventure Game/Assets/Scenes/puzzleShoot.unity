@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18337692, g: 0.2289852, b: 0.3061015, a: 1}
+  m_IndirectSpecularColor: {r: 0.18337646, g: 0.22898443, b: 0.30610052, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1219,7 +1219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52686c09e468145048969668d485437a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: {fileID: 0}
 --- !u!1001 &771792087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2225,7 +2224,9 @@ MonoBehaviour:
   totalKey: 5
   livesUI: {fileID: 868600779}
   keysUI: {fileID: 771792088}
+  doorUI: {fileID: 0}
   pauseUI: {fileID: 840386121}
+  explosion: {fileID: 73581514547920192, guid: 13e0f309ab0939b4eab96959b23ea7cc, type: 3}
 --- !u!4 &1543759136
 Transform:
   m_ObjectHideFlags: 0

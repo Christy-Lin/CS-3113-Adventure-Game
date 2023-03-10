@@ -16,6 +16,10 @@ public class BossShoot : MonoBehaviour
         StartCoroutine(ShootMissile(direc));
     }
 
+    public void stopShoot(int direc) {
+        StopCoroutine(ShootMissile(direc));
+    }
+
     IEnumerator ShootMissile(int direction) {
         // shoot.. wait 2 sec... shoot... etc.
         // yield return new WaitForSeconds(1);

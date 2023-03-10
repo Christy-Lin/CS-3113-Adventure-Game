@@ -9,8 +9,7 @@ public class BossFight : MonoBehaviour
     public AudioClip deathSfx;
     
     GameObject[] patterns;
-    GameObject king, explosion;
-    public GameObject key, door;
+    public GameObject king, key, door, explosion;
     int position = 0;
     int health = 3;
     //float time = 1f;
@@ -31,7 +30,7 @@ public class BossFight : MonoBehaviour
         door.SetActive(false);
         key.SetActive(false);
 
-        kingMissles();
+        kingMissles(true);
         //GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().StopMusic();
     }
 
@@ -39,23 +38,29 @@ public class BossFight : MonoBehaviour
     {
         switchCheck();
         if(allowSwitch) { cyclePatterns(); }
-        
-        if (health == 0) {
-            allowSwitch = false;
-            Instantiate(explosion, transform.position, Quaternion.identity);
-            _audioSource.PlayOneShot(deathSfx);
-            key.SetActive(true);
-            door.SetActive(true);
-            Destroy(king);
-        }
     }
 
     public void bossHealth() {
         health--;
+        
+        if (health == 0) {
+            allowSwitch = false;
+            GameObject temp = Instantiate(explosion, transform.position, Quaternion.identity);
+            _audioSource.PlayOneShot(deathSfx);
+
+            for(int i = 0; i < patterns.Length; ++i) {
+                patterns[i].SetActive(false);
+            }
+
+            Destroy(king);
+            Destroy(temp);
+            key.SetActive(true);
+            door.SetActive(true);
+            Destroy(gameObject);
+        }
     }
 
     private void switchCheck() {
-        print(secSince + ", " + swapInterv + "\n");
         if (!allowSwitch) {
             secSince += Time.deltaTime;
             
@@ -80,11 +85,20 @@ public class BossFight : MonoBehaviour
         position++;
     }
 
-    void kingMissles() {
-        GetComponent<BossShoot>().shoot(0);
-        GetComponent<BossShoot>().shoot(1);
-        GetComponent<BossShoot>().shoot(2);
-        GetComponent<BossShoot>().shoot(3);
-        GetComponent<BossShoot>().shoot(4);
+    void kingMissles(bool shoot) {
+        if (shoot) {
+            GetComponent<BossShoot>().shoot(0);
+            GetComponent<BossShoot>().shoot(1);
+            GetComponent<BossShoot>().shoot(2);
+            GetComponent<BossShoot>().shoot(3);
+            GetComponent<BossShoot>().shoot(4);
+        }
+        else if (!shoot) {
+            GetComponent<BossShoot>().stopShoot(0);
+            GetComponent<BossShoot>().stopShoot(1);
+            GetComponent<BossShoot>().stopShoot(2);
+            GetComponent<BossShoot>().stopShoot(3);
+            GetComponent<BossShoot>().stopShoot(4);
+        }
     }
 }

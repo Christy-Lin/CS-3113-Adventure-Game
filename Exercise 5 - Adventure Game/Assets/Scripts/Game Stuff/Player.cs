@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     bool allowDamage = true;
     float secSinceLastDamage = 0.0f;
-    public float allowDamageInterval = 0.5f;
+    public float allowDamageInterval = 1f;
 
     public AudioClip collectSound, deathSfx, hitSound; 
     AudioSource _audioSource;
@@ -95,24 +95,28 @@ public class Player : MonoBehaviour
 
         else if (other.CompareTag("Plate")) { 
             
-            puzzleObj.GetComponent<puzzleCombi>().Input(other.gameObject);
-            // change color of plate to purple (switch material)
-            // other.GetComponent<Renderer>().material.color = new Color(1, 0.92f, 0.016f, 1);
-            other.GetComponent<Renderer>().material = purplePlate;
-            allowDamage = false;
-
             if (bossFightObj) {
+                print("a\n");
                 bossFightObj.GetComponent<BossFight>().bossHealth();
                 Destroy(other.gameObject);
+                print("b\n");
             }
 
-            if (plateCount <= 4) {
-                plateCount++;
+            else if (puzzleObj) {
+                puzzleObj.GetComponent<puzzleCombi>().Input(other.gameObject);
+                // change color of plate to purple (switch material)
+                // other.GetComponent<Renderer>().material.color = new Color(1, 0.92f, 0.016f, 1);
+                other.GetComponent<Renderer>().material = purplePlate;
+                allowDamage = false;
+
+                if (plateCount <= 4) {
+                    plateCount++;
+                }
+                else {
+                    plateCount = 1;
+                }
+                print("count:" + plateCount);
             }
-            else {
-                plateCount = 1;
-            }
-            print("count:" + plateCount);
         }
 
         else if (other.CompareTag("Door")) {

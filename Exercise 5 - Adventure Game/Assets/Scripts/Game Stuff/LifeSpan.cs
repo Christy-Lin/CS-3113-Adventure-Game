@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LifeSpan : MonoBehaviour
 {
-    public float lifeTime = 2;
+    public float lifeTime = 1;
 
     // Start is called before the first frame update
     void Start()

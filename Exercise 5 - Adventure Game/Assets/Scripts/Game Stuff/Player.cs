@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
 
     public AudioClip collectSound, deathSfx, hitSound; 
     AudioSource _audioSource;
+    public Material purplePlate;
+    public int plateCount = 0;
 
     void Start()
     {
@@ -91,10 +93,21 @@ public class Player : MonoBehaviour
         }
 
         else if (other.CompareTag("Plate")) { 
+            
             puzzleObj.GetComponent<puzzleCombi>().Input(other.gameObject);
-            // change color of plate to green
-            other.GetComponent<Renderer>().material.color = new Color(1, 0.92f, 0.016f, 1);
+            // change color of plate to purple (switch material)
+            // other.GetComponent<Renderer>().material.color = new Color(1, 0.92f, 0.016f, 1);
+            other.GetComponent<Renderer>().material = purplePlate;
             allowDamage = false;
+            // plateCount++;
+
+            if (plateCount <= 4) {
+                plateCount++;
+            }
+            else {
+                plateCount = 1;
+            }
+            print("count:" + plateCount);
         }
 
         else if (other.CompareTag("Door")) {

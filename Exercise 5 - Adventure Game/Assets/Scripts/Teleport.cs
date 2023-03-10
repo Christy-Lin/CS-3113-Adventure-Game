@@ -46,18 +46,6 @@ public class Teleport : MonoBehaviour
                 }
             }
 
-            // if (gameObject.name != "Door (6)") {
-            //     // if teleporting to the room where you die (Teleport5), coroutine
-            //     if (teleportTarget.name == "Teleport5") {
-            //         // _audioSource.PlayOneShot(wrongSound);
-            //         StartCoroutine(WrongDoor());
-            //     }
-            //     // otherwise just teleport
-            //     else {
-            //         _audioSource.PlayOneShot(nextSound);
-            //         _navMeshAgent.Warp(teleportTarget.transform.position);
-            //     }
-            // }
         }
 
 

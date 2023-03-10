@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI livesUI, keysUI, doorUI;
     public GameObject pauseUI;
     private Vector3 original_position;
+    
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
 
         livesUI.text = "HEALTH: " + lives;
         keysUI.text = "KEYS: " + keyTaken + "/" + totalKey;
+
     }
 
     public void Update()

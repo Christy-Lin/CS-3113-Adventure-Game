@@ -10,9 +10,10 @@ public class puzzleCombi : MonoBehaviour
     int[] answer = {1,4,3,0,2};
     int[] input = new int[5];
     int position = 0;
-    bool match = true;
+    public bool match = true;
 
     public GameObject traps;
+    public Material plateOriginal;
 
     void Awake() {
         DontDestroyOnLoad(gameObject);
@@ -32,24 +33,26 @@ public class puzzleCombi : MonoBehaviour
                 print("CheckMatch\n");
                 traps.GetComponent<combiSpike>().Move();
             }
-            else {
-                // if not a match, change the color of object with tag "Plate" to original color
-                // original color: (0, 0.7992163, 1, 1)
-                foreach (GameObject plate in plates) {
-                    //plate.GetComponent<Renderer>().material.color = new Color(0, 0.7992163f, 1, 1);
-                }
-            }
+
             position = 0;
+        }
+
+        // if plateCount (from Player.cs == 5, change material)
+        if (GameObject.Find("Queen").GetComponent<Player>().plateCount >= 5) {
+            foreach (GameObject plate in plates) {
+                plate.GetComponent<Renderer>().material = plateOriginal;
+            } 
         }
     }
 
+
     bool checkMatch(int i) {
-        //for (int i = 0; i < answer.Length; ++i) {
+        // for (int i = 0; i < answer.Length; ++i) {
             if (answer[i] != input[i]) {
                 print("Fail\n");
                 return false;
             }
-        //}
+        // }
         print("Congrats\n");
         return true;
     }
@@ -57,13 +60,14 @@ public class puzzleCombi : MonoBehaviour
     public void Input(GameObject obj) {
         int index = findIndex(obj);
         print(index + "\n");
-        if (index != plates.Length && position < answer.Length) {
-            input[position] = index;
+        if (index != plates.Length && position < answer.Length) {   // still input left for sequence
+            input[position] = index;    // enter into input arr
             match &= checkMatch(position);
 
-            if (match) { position++; }
+            if (match) { position++; }  //
             else { position = 0;}
         }
+ 
     }
 
     int findIndex(GameObject obj) {

@@ -253,3 +253,4 @@ MonoBehaviour:
   collectSound: {fileID: 8300000, guid: 3ef590fb89d4ae64aba7058dec80b85c, type: 3}
   deathSfx: {fileID: 8300000, guid: d5e552f965261e645a4dbeb835e5238f, type: 3}
   hitSound: {fileID: 8300000, guid: 6dc759177b51f40be9dbd3e669331f67, type: 3}
+  purplePlate: {fileID: 2100000, guid: 2fdeac7f69d125241b7bc6191a501ed1, type: 2}

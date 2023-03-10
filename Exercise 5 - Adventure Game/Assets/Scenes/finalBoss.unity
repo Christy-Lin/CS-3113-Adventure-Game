@@ -415,7 +415,7 @@ PrefabInstance:
       objectReference: {fileID: 73581514547920192, guid: 13e0f309ab0939b4eab96959b23ea7cc, type: 3}
     - target: {fileID: -7287896985170252875, guid: 4a969e42a4e1845419403b2782b11e74, type: 3}
       propertyPath: plateCount
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -7287896985170252875, guid: 4a969e42a4e1845419403b2782b11e74, type: 3}
       propertyPath: bossFightObj
@@ -4235,7 +4235,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

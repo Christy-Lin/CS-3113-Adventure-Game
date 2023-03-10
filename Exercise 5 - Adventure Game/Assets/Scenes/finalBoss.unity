@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18337646, g: 0.22898443, b: 0.30610052, a: 1}
+  m_IndirectSpecularColor: {r: 0.18337692, g: 0.2289852, b: 0.3061015, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -140,9 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 686899745067822563, guid: afb5dea3f906a6042ae15252d30e3784, type: 3}
       propertyPath: m_RootOrder
-
       value: 8
-
       objectReference: {fileID: 0}
     - target: {fileID: 686899745067822563, guid: afb5dea3f906a6042ae15252d30e3784, type: 3}
       propertyPath: m_LocalPosition.x
@@ -417,9 +415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5418821195963144509, guid: 4a969e42a4e1845419403b2782b11e74, type: 3}
       propertyPath: m_RootOrder
-
       value: 7
-
       objectReference: {fileID: 0}
     - target: {fileID: 5418821195963144509, guid: 4a969e42a4e1845419403b2782b11e74, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3942,10 +3938,7 @@ PrefabInstance:
 --- !u!4 &879117679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1050263732630381204, guid: da8ccc24bd3cb5e4db332c171027e02e, type: 3}
-
-
   m_PrefabInstance: {fileID: 879117678}
-
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &879410154
 PrefabInstance:
@@ -4319,11 +4312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1b6878438ca9b4bbd3c82ce272a1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
   spawnPoint: {fileID: 898575194}
   missilePrefab: {fileID: 2475637691377144622, guid: 6b4ace89b50478f4e9fb4bdd76e6601f, type: 3}
 --- !u!1001 &927359759
-
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8757,9 +8748,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1050263732630381204, guid: da8ccc24bd3cb5e4db332c171027e02e, type: 3}
   m_PrefabInstance: {fileID: 1783943958}
   m_PrefabAsset: {fileID: 0}
-
 --- !u!1001 &1798298151
-
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9039,7 +9028,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-
   - {fileID: 1434109448}
   - {fileID: 443136469}
   - {fileID: 485957363}
@@ -9075,7 +9063,6 @@ Transform:
   - {fileID: 1314690420}
   m_Father: {fileID: 1550562622}
   m_RootOrder: 0
-
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1897780414
 PrefabInstance:
@@ -10222,9 +10209,7 @@ MonoBehaviour:
   totalKey: 3
   livesUI: {fileID: 1201929337}
   keysUI: {fileID: 1201929336}
-
   doorUI: {fileID: 1201929338}
-
   pauseUI: {fileID: 1201929335}
 --- !u!1 &6909138943445021422
 GameObject:

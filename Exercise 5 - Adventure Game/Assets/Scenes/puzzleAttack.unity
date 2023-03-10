@@ -6194,9 +6194,7 @@ MonoBehaviour:
   totalKey: 12
   livesUI: {fileID: 1543623968}
   keysUI: {fileID: 1839523582}
-  doorUI: {fileID: 0}
   pauseUI: {fileID: 1260255375}
-  explosion: {fileID: 73581514547920192, guid: 13e0f309ab0939b4eab96959b23ea7cc, type: 3}
 --- !u!4 &1387483063
 Transform:
   m_ObjectHideFlags: 0
@@ -7163,6 +7161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52686c09e468145048969668d485437a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  message: {fileID: 0}
 --- !u!1001 &1763262513
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,8 +14,6 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI livesUI, keysUI, doorUI;
     public GameObject pauseUI;
     private Vector3 original_position;
-    public GameObject explosion;
-  
 
     private void Start()
     {
@@ -54,15 +52,8 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
         else {
-            string scene = SceneManager.GetActiveScene().name;
-            if (scene != "puzzleChoose") {
-                Vector3 current_position = GameObject.FindWithTag("Player").transform.position;
-                GameObject death = Instantiate(explosion, new Vector3(current_position.x, 1, current_position.z), Quaternion.identity);
-                Destroy(death, 0.5f);
-                Invoke("teleport", 0.5f);
-            } else {
-                teleport();
-            }
+
+           teleport();        
             //healthUI.text = "HEALTH: " + health;
             livesUI.text = "HEALTH: " + lives;
         }

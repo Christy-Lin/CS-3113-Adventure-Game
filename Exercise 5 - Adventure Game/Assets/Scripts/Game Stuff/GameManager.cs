@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
         
         original_position = GameObject.FindWithTag("Player").transform.position;
         pauseUI.SetActive(false);
-        //GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
 
         livesUI.text = "HEALTH: " + lives;
         keysUI.text = "KEYS: " + keyTaken + "/" + totalKey;

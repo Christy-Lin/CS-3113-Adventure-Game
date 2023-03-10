@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/puzzleShoot.unity
     guid: 791533ce0085917429ec0958bf1bca07
   - enabled: 1
-    path: Assets/Scenes/puzzleDodge.unity
-    guid: d16eca240e6701045a20e49609814cfd
-  - enabled: 1
     path: Assets/Scenes/puzzleCombination.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
@@ -23,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/puzzleMaze.unity
     guid: ff01c19e10f34dd4aa5a344011ea81de
+  - enabled: 1
+    path: Assets/Scenes/puzzleDodge.unity
+    guid: d16eca240e6701045a20e49609814cfd
   - enabled: 1
     path: Assets/Scenes/puzzleAttack.unity
     guid: 19edf1ef5664a46f780b3577b0f0cd11

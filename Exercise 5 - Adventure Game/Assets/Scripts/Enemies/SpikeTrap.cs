@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossFight : MonoBehaviour
+public class SpikeTrap : MonoBehaviour
 {
     void Start()
     {
@@ -13,17 +13,4 @@ public class BossFight : MonoBehaviour
     {
         
     }
-
-    void bossHealth() {
-
-    }
-
-    void spikePatterns() {
-
-    }
-
-    void kingMissles() {
-
-    }
-
 }

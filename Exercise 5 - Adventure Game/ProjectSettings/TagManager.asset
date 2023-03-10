@@ -15,7 +15,6 @@ TagManager:
   - Main
   - Music
   - WrongDoor
-  - Pattern
   layers:
   - Default
   - TransparentFX

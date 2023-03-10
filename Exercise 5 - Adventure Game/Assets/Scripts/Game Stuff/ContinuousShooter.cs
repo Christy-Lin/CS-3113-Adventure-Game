@@ -16,6 +16,12 @@ public class ContinuousShooter : MonoBehaviour
         StartCoroutine(ShootMissile());
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
     IEnumerator ShootMissile() {
         // shoot.. wait 2 sec... shoot... etc.
         // yield return new WaitForSeconds(1);
@@ -45,5 +51,6 @@ public class ContinuousShooter : MonoBehaviour
 
         }
     }
+
 
 }

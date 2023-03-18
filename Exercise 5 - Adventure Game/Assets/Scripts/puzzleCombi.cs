@@ -7,10 +7,9 @@ public class puzzleCombi : MonoBehaviour
     GameManager _gameManager;
     
     GameObject[] plates;
-    int[] answer = {1,4,3,0,2};
+    int[] answer = {0, 1,2,3,4};
     int[] input = new int[5];
     int position = 0;
-    bool match = true;
 
     public GameObject traps;
     public Material plateOriginal;
@@ -29,14 +28,14 @@ public class puzzleCombi : MonoBehaviour
     void Update()
     {
         if (position == answer.Length) {
-            if (match) {
+            if (checkMatch()) {
                 print("CheckMatch\n");
                 traps.SetActive(false);
                 //traps.GetComponent<combiSpike>().Move();
             }
 
             position = 0;
-            match = true;
+            //match = true;
         }
 
         // if plateCount (from Player.cs == 5, change material)
@@ -48,34 +47,34 @@ public class puzzleCombi : MonoBehaviour
     }
 
 
-    bool checkMatch(int i) {
-        // for (int i = 0; i < answer.Length; ++i) {
+    bool checkMatch() {
+        for (int i = 0; i < answer.Length; ++i) {
             if (answer[i] != input[i]) {
                 print("Fail\n");
                 return false;
             }
-        // }
+        }
         print("Match\n");
         return true;
     }
 
     public void Input(GameObject obj) {
-        int index = findIndex(obj);
+        int index = findVal(obj);
         print(index + "\n");
         if (index != plates.Length && position < answer.Length) {   // still input left for sequence
             input[position] = index;    // enter into input arr
-            match &= checkMatch(position);
-            print("match: " + match + "\n");
+            //match &= checkMatch(position);
+            //print("match: " + match + "\n");
 
             position++;
         }
  
     }
 
-    int findIndex(GameObject obj) {
+    int findVal(GameObject obj) {
         for (int i = 0; i < plates.Length; ++i) {
             if (plates[i] == obj) {
-                return i;
+                return obj.GetComponent<combiValue>().value;
             }
         }
         return plates.Length;
